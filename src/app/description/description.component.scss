@@ -1,0 +1,14 @@
+.card{
+  background: #333;
+  color: #ffffff;
+}
+.header{
+  text-align: center;
+}
+
+@media screen and (min-width: 1168px){
+  .card{
+    margin-top: 150px;
+  }
+}
+

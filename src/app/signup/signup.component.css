@@ -1,0 +1,93 @@
+.card .card-body .parentForm {
+  height: 100%;
+  width: 100%;
+}
+
+.card .card-body .childForm {
+  margin: auto;
+  width: 70%;
+  top: 50%;
+  left: 50%;
+  width: 90%;
+}
+
+.card .card-body .form-container {
+  padding: 40px 30px 15px 30px;
+  border-radius: 20px 20px 20px 20px;
+  height: 32vh;
+}
+
+.card .card-body .form-group {
+  position: relative;
+}
+
+.card .card-body label {
+  position: absolute;
+  top: 8px;
+  left: 0;
+  color: #c5c5c5;
+  font-size: 12px;
+  pointer-events: none;
+  outline: none;
+  -webkit-transition: 0.5s;
+  transition: 0.5s;
+}
+
+.card .card-body input:focus ~ label {
+  top: -20px;
+  left: 0;
+  font-size: 14px;
+  color: #f1c40f;
+  font-weight: bold;
+}
+
+.card .card-body input:valid ~ label {
+  position: absolute;
+  top: -20px;
+  left: 0;
+  font-size: 14px;
+  color: #f1c40f;
+  font-weight: bold;
+}
+
+.card .card-body input[type="text"],
+.card .card-body [type="password"] {
+  background: transparent;
+  border: none;
+  border-bottom: 2px solid #c5c5c5;
+  border-radius: 0 0 0 0;
+  color: #333;
+  outline: none;
+}
+
+.card .card-body .form-control-no-border:focus {
+  border-color: #32CD32;
+  -webkit-box-shadow: none;
+          box-shadow: none;
+  color: #333;
+}
+
+.card .card-body .is-invalid:focus {
+  border-color: red;
+  outline: none;
+  -webkit-box-shadow: none;
+          box-shadow: none;
+}
+
+.card .card-body .btn {
+  outline: none;
+}
+
+.card-footer {
+  text-align: center;
+}
+
+.card-header {
+  background: #57606f;
+  text-align: center;
+}
+
+.card-header .desc {
+  color: #ffffff;
+}
+/*# sourceMappingURL=signup.component.css.map */

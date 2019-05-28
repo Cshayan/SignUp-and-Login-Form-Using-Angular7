@@ -1,0 +1,86 @@
+<app-navbar></app-navbar>
+<br>
+<div class="container-fluid">
+  <div class="row">
+    <div class="col-md-2"></div>
+    <div class="col-md-8">
+      <div class="card">
+        <div class="card-header">
+          <h1>Sign<small><span style="color: yellow;">Up</span></small></h1>
+        </div>
+        <div class="card-body">
+          <div class="parentForm">
+            <div class="childForm">
+              <form class="form-container" method="POST" action="#" #userRegistrationForm="ngForm"
+                (ngSubmit)="onSubmit()" novalidate>
+                <div class="form-group">
+                  <input type="text" placeholder="First Name" [pattern]="namePattern" #firstName="ngModel"
+                    class="form-control form-control-no-border" name="firstName" required [(ngModel)]="user.firstName"
+                    [class.is-invalid]="firstName.invalid && firstName.touched">
+                  <div *ngIf="firstName.errors && (firstName.invalid && firstName.touched)">
+                    <small class="text-danger" *ngIf="firstName.errors.required">FirstName is required!</small>
+                    <small class="text-danger" *ngIf="firstName.errors.pattern">FirstName must contain only
+                      alphabets!</small>
+                  </div>
+                </div>
+                <br>
+                <div class="form-group">
+                  <input type="text" placeholder="Last Name" [pattern]="namePattern" #lastName="ngModel"
+                    class="form-control form-control-no-border" required name="lastname" [(ngModel)]="user.lastName"
+                    [class.is-invalid]="lastName.invalid && lastName.touched">
+                  <div *ngIf="lastName.errors && (lastName.invalid && lastName.touched)">
+                    <small class="text-danger" *ngIf="lastName.errors.required">LastName is required!</small>
+                    <small class="text-danger" *ngIf="lastName.errors.pattern">LastName must contain only
+                      alphabets!</small>
+                  </div>
+                </div>
+                <br>
+                <div class="form-group">
+                  <input type="text" placeholder="Email" #email="ngModel" required [pattern]="emailPattern"
+                    class="form-control form-control-no-border" name="email" [(ngModel)]="user.email"
+                    [class.is-invalid]="email.invalid && email.touched">
+                  <div *ngIf="email.errors && (email.invalid && email.touched)">
+                    <small class="text-danger" *ngIf="email.errors.required">Email is required!</small>
+                    <small class="text-danger" *ngIf="email.errors.pattern">Invalid email format!</small>
+                  </div>
+                </div>
+                <br>
+                <div class="form-group">
+                  <input type="password" placeholder="Password" #password="ngModel" [pattern]="passwordPattern"
+                    class="form-control form-control-no-border" required name="password" [(ngModel)]="user.password"
+                    [class.is-invalid]="password.invalid && password.touched">
+                  <div *ngIf="password.errors && (password.invalid && password.touched)">
+                    <small class="text-danger" *ngIf="password.errors.required">Password is required!</small>
+                    <small class="text-danger" *ngIf="password.errors.pattern">Password must contain minimum 8
+                      characters, at-least 1 uppercase alphabet, at-least 1 lowercase alphabet, at-least 1 number and
+                      at-least 1 special character</small>
+                  </div>
+                </div>
+                <br>
+                <div class="form-group">
+                  <input type="password" placeholder="Confirm Password" #confirmPassword="ngModel"
+                    class="form-control form-control-no-border" required name="confirmPassword"
+                    confirmEqualValidator="password" [(ngModel)]="user.confirmPassword"
+                    [class.is-invalid]="confirmPassword.invalid && confirmPassword.touched">
+                  <div *ngIf="confirmPassword.touched && confirmPassword.errors?.required">
+                    <small class="text-danger">Confirm Password is required!</small>
+                  </div>
+                  <div
+                    *ngIf="confirmPassword.touched && confirmPassword.errors?.notEqual && !confirmPassword.errors.required">
+                    <small class="text-danger">Password and confirm password doesn't match!</small>
+                  </div>
+                </div>
+                <p class="desc">Already have an account? <a routerLink="login" >Login</a> Here</p>
+                <div class="form-group" style="float:right;">
+                  <button type="submit" [disabled]="!userRegistrationForm.valid"
+                    class="btn btn-warning btn-block">SignUp</button>
+                </div>
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="col-md-2"></div>
+  </div>
+</div>

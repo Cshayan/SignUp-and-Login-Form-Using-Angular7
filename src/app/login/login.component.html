@@ -1,0 +1,28 @@
+<app-navbar></app-navbar>
+<br>
+<div class="container-fluid">
+  <div class="row">
+    <div class="col-md-2"></div>
+    <div class="col-md-8">
+      <div class="card">
+        <div class="card-header">
+          <h1>Log<small><span style="color: yellow;">In</span></small></h1>
+        </div>
+        <div class="card-body">
+          <form action="#" method="POST" #loginForm="ngForm">
+            <div class="form-group">
+              <input type="text" class="form-control form-control-no-border" placeholder="Email" required>
+            </div>
+            <div class="form-group">
+              <input type="password" class="form-control form-control-no-border" placeholder="Password" required>
+            </div>
+            <div class="form-group">
+              <button type="submit" class="btn btn-success">Login</button>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+    <div class="col-md-2"></div>
+  </div>
+</div>
